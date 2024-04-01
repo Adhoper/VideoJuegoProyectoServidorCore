@@ -71,7 +71,7 @@ namespace VideoJuegoProyectoServidorCore
                 string message = Encoding.UTF8.GetString(buffer, 0, result.Count);
                 Console.WriteLine($"Mensaje recibido: {message}");
 
-                //Se conecta a la Base de Datos
+                //Se instancia el contexto de la base de datos
                 using (var db = new InfoClienteContext())
                 {
 
