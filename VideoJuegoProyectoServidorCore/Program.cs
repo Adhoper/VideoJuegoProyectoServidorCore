@@ -82,7 +82,7 @@ namespace VideoJuegoProyectoServidorCore
                 // Valida que el mensaje sea iniciar juego
                 if (message.ToLower() == "iniciar juego")
                 {
-                    //Toma el modelo y le asigna el mensaje recibido
+                    //Instancia un objeto y le asigna el mensaje recibido a su propiedad
                     var infocliente = new ClienteInfo()
                     {
                         Mensaje = message,
@@ -98,7 +98,7 @@ namespace VideoJuegoProyectoServidorCore
                     responseBuffer = Encoding.UTF8.GetBytes(response);
                     await webSocket.SendAsync(new ArraySegment<byte>(responseBuffer), WebSocketMessageType.Text, true, CancellationToken.None);
 
-                    //Se agrega al modelo
+                    //Se agrega el objeto a una coleccion
                     db.ClienteInfo.Add(infocliente);
                 }
                 else if (message.ToLower() == "jimwestt")
