@@ -98,6 +98,7 @@ namespace VideoJuegoProyectoServidorCore
                     responseBuffer = Encoding.UTF8.GetBytes(response);
                     await webSocket.SendAsync(new ArraySegment<byte>(responseBuffer), WebSocketMessageType.Text, true, CancellationToken.None);
 
+                    //Se agrega al modelo
                     db.ClienteInfo.Add(infocliente);
                 }
                 else if (message.ToLower() == "jimwestt")
@@ -134,6 +135,7 @@ namespace VideoJuegoProyectoServidorCore
                     await webSocket.SendAsync(new ArraySegment<byte>(errorBuffer), WebSocketMessageType.Text, true, CancellationToken.None);
                 }
 
+                    //Se guarda en la base de datos
                     await db.SaveChangesAsync();
 
                }
