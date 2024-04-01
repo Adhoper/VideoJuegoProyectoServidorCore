@@ -82,6 +82,7 @@ namespace VideoJuegoProyectoServidorCore
                 // Valida que el mensaje sea iniciar juego
                 if (message.ToLower() == "iniciar juego")
                 {
+                    //Toma el modelo y le asigna el mensaje recibido
                     var infocliente = new ClienteInfo()
                     {
                         Mensaje = message,
